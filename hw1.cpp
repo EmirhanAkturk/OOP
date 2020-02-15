@@ -1,5 +1,5 @@
 /*
-    Ekrana yıldız karaktelerinden üçgen bastırma
+    Ekrana yıldız karaktelerinden üçgen,ters ücgen,elmas bastırma
     Emirhan Aktürk
 */
 #include<iostream>
