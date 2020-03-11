@@ -45,8 +45,11 @@ void complex::subtract(complex &number){
 void complex::divide(complex &number){
     double a=number.reel;
     double b=number.imajiner;
-    this->reel=(reel*a-imajiner*b)/(a*a+b*b);
-    this->imajiner=(reel*b+imajiner*a)/(a*a+b*b);}
+    if((a*a-b*b)==0){
+        perror("Divide Zero:");
+        return;}
+    this->reel=(reel*a-imajiner*b)/(a*a-b*b);
+    this->imajiner=(reel*b+imajiner*a)/(a*a-b*b);}
 double complex::getReel()const{
     return reel;}
 double complex::getImajiner()const{
