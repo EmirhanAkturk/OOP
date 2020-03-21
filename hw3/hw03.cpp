@@ -6,7 +6,7 @@
 using namespace std;
 
 //asagidaki satirlari yoruma alarak kodunuzu farkli sekillerde test edebilirsiniz.
-//#define _TEST_ITERATIVE_
+#define _TEST_ITERATIVE_
 #define _TEST_RECURSIVE_
 
 // Bu odevde global veya statik degisken tanimlanamaz!!!
