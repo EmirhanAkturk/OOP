@@ -62,7 +62,7 @@ double Triangle::getPerimeter()const noexcept{
 }
 
 void Triangle::printInfo() const noexcept{
-    cout<<"Rectangle\n"<<"Number of point:"<<NUMBER_OF_CORNERS<<endl;
+    cout<<"Triangle\n"<<"Number of point:"<<NUMBER_OF_CORNERS<<endl;
     cout<<"Points:";
     for(auto p:pts)
 		cout<<"("<<p.x<<","<<p.y<<"),";
