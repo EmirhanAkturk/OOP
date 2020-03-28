@@ -75,9 +75,6 @@ int sortByPerimeter(vector<T> &v)
         key = v[i];  
         j = i - 1;  
   
-        /* Move elements of arr[0..i-1], that are  
-        greater than key, to one position ahead  
-        of their current position */
         while (j >= 0 && v[j].getPerimeter() > key.getPerimeter()) 
         {  
             v.insert(j+1,v[j]);  
@@ -89,50 +86,14 @@ int sortByPerimeter(vector<T> &v)
 }
 
 int main()
-{	
-	// cout<<"size:"<<a.size()<<endl;
-	// a.push_back(10);
-	// a.push_back(20);
-	// a.push_back(30);
-	// search(a,30);
-	// cout<<"index:"<<search(a,30)<<endl;
-	Point x{-1,10},b{0,-1},c{1,0},d{10,10};
-	//  array<Point,3>pts={x,b,c};
-	//  Triangle x{pts};
-	//  Quadrilateral::Color color=Quadrilateral::Color::BLACK;
-	//  Quadrilateral t{x,c,color};
-	// vector<Quadrilateral>a{};
-	// t.printInfo();
-	// int a1=1,a2=2;
-	// int a3= (a1>a2)? a1:a2;
-	// cout<<"a:"<<a3;
-	vector<Quadrilateral> a;
-	Quadrilateral q1{x},q2,q3;
-	a.push_back(q2);
-	a.push_back(q2);
-	a.push_back(q3);
-	a.push_back(q3);
-	cout<<"a içinde q1 indeksi:"<<search(a,q1)<<endl;
-
-	//array<Point,4>pts={a,b,c,d};
-	//Quadrilateral x{pts};
-	//q.printInfo();
-
-	// array<Point,4>pts;
-	// auto p = Point{ 4.5, 6.2 };
-	// 	cout<<"("<<p.x<<","<<p.y<<"),";
-	// for(auto &p:pts)
-	// 	{p.x=1; p.y=1;}
-	// for(auto p:pts)
-	// 	cout<<"("<<p.x<<","<<p.y<<"),";
-
-	// Point class test
+{
+	Point class test
 	auto p = Point{ 4.5, 6.2 };
 
 	cout << p.x << " " << p.y << endl;
 	cout << p.coords[0] << " " << p.coords[1] << endl;
 
-	// Sample Quad and Triangle Objects
+	Sample Quad and Triangle Objects
 	auto sampleQuad = Quadrilateral{ Point(4, 5), 20, 20 };
 	cout << "Color of Sample Quad:" << sampleQuad.getColorAsString() << endl;
 
@@ -140,110 +101,113 @@ int main()
 	cout << "Color of Sample Triangle:" << sampleTriangle.getColorAsString() << endl;
 
 
-	// Filling vectors randomly
+	Filling vectors randomly
 	auto vectorOfQuads = vector<Quadrilateral>{};
 	auto vectorOfTriangles = vector<Triangle>{};
-	
+
+
 	fillTriangles(vectorOfTriangles);
 	fillQuads(vectorOfQuads);
+
 	cout<<"vectorOfTriangles size:"<<vectorOfTriangles.size()<<endl;
 	cout<<"vectorOfQuads size:"<<vectorOfQuads.size()<<endl;
 	// Search sample objects in the corresponding vectors
 	cout << "Searching a triangle...\n";
 	sampleQuad.printInfo();
-	 //if (auto idx = search(vectorOfTriangles, sampleTriangle) >= 0)
-	//  	cout << "A similar object is found at index-" << idx << endl;
-	//  else cout << "No similar object can be found" << endl;
+	// int idx = search(vectorOfTriangles, vectorOfTriangles.at(5));
+	if ( idx>= 0)
+	  	cout << "A similar object is found at index-" << idx << endl;
+	  else cout << "No similar object can be found" << endl;
 
-	// cout << "Searching a quadrilateral...\n";
-	// sampleQuad.printInfo();
-	// if (auto idx = search(vectorOfQuads, sampleQuad) >= 0)
-	// 	cout << "A similar object is found at index-" << idx << endl;
-	// else cout << "No similar object can be found" << endl;
+	cout << "Searching a quadrilateral...\n";
+	sampleQuad.printInfo();
+	if (auto idx = search(vectorOfQuads, sampleQuad) >= 0)
+		cout << "A similar object is found at index-" << idx << endl;
+	else cout << "No similar object can be found" << endl;
 
 	
-	// // Add sample Triangle object to the vector and sort the vector
-	// vectorOfTriangles.push_back(sampleTriangle);
-	// //sortByPerimeter(vectorOfTriangles);
+	// Add sample Triangle object to the vector and sort the vector
+	vectorOfTriangles.push_back(sampleTriangle);
+	//sortByPerimeter(vectorOfTriangles);
 
 
-	// // Search sample item again. Now, you must have a hit.
-	// cout << "Searching a triangle...\n";
-	// sampleQuad.printInfo();
-	// if (auto idx = search(vectorOfTriangles, sampleTriangle) >= 0)
-	// 	cout << "A similar object is found at index-" << idx << endl;
-	// else cout << "No similar object can be found" << endl;
+	// Search sample item again. Now, you must have a hit.
+	cout << "Searching a triangle...\n";
+	sampleQuad.printInfo();
+	if (auto idx = search(vectorOfTriangles, sampleTriangle) >= 0)
+		cout << "A similar object is found at index-" << idx << endl;
+	else cout << "No similar object can be found" << endl;
 
 
 
-	// // Add sample Quad object to the vector and sort the vector
-	// vectorOfQuads.push_back(sampleQuad);
-	// //sortByPerimeter(vectorOfQuads);
+	// Add sample Quad object to the vector and sort the vector
+	vectorOfQuads.push_back(sampleQuad);
+	//sortByPerimeter(vectorOfQuads);
 
-	// // Search sample item again. Now, you must have a hit.
-	// cout << "Searching a quadrilateral...\n";
-	// sampleQuad.printInfo();
-	// if (auto idx = search(vectorOfQuads, sampleQuad) >= 0)
-	// 	cout << "A similar object is found at index-" << idx << endl;
-	// else cout << "No similar object can be found" << endl;
-
-
-	// // Invalid cases
-	// try
-	// {
-	// 	auto invalidTriangle1 = Triangle{ Point{4, 0},  Point{9, 0},  Point{14, 0} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid triangle: " << ex.what() << endl;
-	// }
-
-	// try
-	// {
-	// 	auto invalidTriangle2 = Triangle{ Point{4, 4},  Point{4, 4},  Point{4, 4} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid triangle: " << ex.what() << endl;
-	// }
-
-	// try
-	// {
-	// 	auto invalidTriangle3 = Triangle{ Point{4, 0},  Point{4, 4},  Point{4, 14} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid triangle: " << ex.what() << endl;
-	// }
-
-	// try
-	// {
-	// 	auto invalidQuad1 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{14, 0}, Point{0, 0} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid Quad: " << ex.what() << endl;
-	// }
+	// Search sample item again. Now, you must have a hit.
+	cout << "Searching a quadrilateral...\n";
+	sampleQuad.printInfo();
+	if (auto idx = search(vectorOfQuads, sampleQuad) >= 0)
+		cout << "A similar object is found at index-" << idx << endl;
+	else cout << "No similar object can be found" << endl;
 
 
-	// try
-	// {
-	// 	auto invalidQuad1 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{14, 0}, Point{0, 0} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid Quad: " << ex.what() << endl;
-	// }
+	// Invalid cases
+	try
+	{
+		auto invalidTriangle1 = Triangle{ Point{4, 0},  Point{9, 0},  Point{14, 0} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid triangle: " << ex.what() << endl;
+	}
+
+	try
+	{
+		auto invalidTriangle2 = Triangle{ Point{4, 4},  Point{4, 4},  Point{4, 4} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid triangle: " << ex.what() << endl;
+	}
+
+	try
+	{
+		auto invalidTriangle3 = Triangle{ Point{4, 0},  Point{4, 4},  Point{4, 14} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid triangle: " << ex.what() << endl;
+	}
+
+	try
+	{
+		auto invalidQuad1 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{14, 0}, Point{0, 0} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid Quad: " << ex.what() << endl;
+	}
 
 
-	// try
-	// {
-	// 	auto invalidQuad2 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{3, 20}, Point{10, 20} };
-	// }
-	// catch (invalid_argument & ex)
-	// {
-	// 	cout << "Invalid Quad: " << ex.what() << endl;
-	// }
+	try
+	{
+		auto invalidQuad1 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{14, 0}, Point{0, 0} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid Quad: " << ex.what() << endl;
+	}
+
+
+	try
+	{
+		auto invalidQuad2 = Quadrilateral{ Point{4, 0},  Point{9, 0},  Point{3, 20}, Point{10, 20} };
+	}
+	catch (invalid_argument & ex)
+	{
+		cout << "Invalid Quad: " << ex.what() << endl;
+	}
 
 	return 0;
 }
